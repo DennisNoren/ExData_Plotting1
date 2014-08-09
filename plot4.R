@@ -29,10 +29,10 @@ png(filename = "plot4.png", width = 480, height = 480)
 par(mar = c(5, 4, 2, 1), mfrow = c(2,2))
 # upper left plot
 with(hhp, plot(DateT, Global_active_power, type="l",
-  xlab = "", ylab = "Global Active Power (kilowatts)", cex.lab = 0.7))
+  xlab = "", ylab = "Global Active Power", cex.lab = 0.7))
 # upper right plot
 with(hhp, plot(DateT, Voltage, type="l",
-  xlab = paste(firstDate,"to",secondDate),
+  xlab = "datetime",
   ylab = "Voltage", cex.lab = 0.7))
 # lower left plot
 plot(hhp$DateT, hhp$Sub_metering_1, type="n",
@@ -46,7 +46,7 @@ plot(hhp$DateT, hhp$Sub_metering_1, type="n",
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 # lower right plot
 with(hhp, plot(DateT, Global_reactive_power, type="l",
-  xlab = paste(firstDate,"to",secondDate),
+  xlab = "datetime",
   ylab = "Global Reactive Power", cex.lab = 0.7))
 par(mfrow = c(1,1), mar = c(5, 4, 4, 2))
 dev.off()
